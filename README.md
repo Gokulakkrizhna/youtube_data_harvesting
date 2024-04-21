@@ -31,5 +31,22 @@ To use this project, Please follow the below steps.
 - Install the required packages: ```pip install -r requirements.txt ```
 - Run the Streamlit app: ```streamlit run p1.py```
 - Access the app in your browser at ```http://localhost:8501```
+# Features
+- Fetch YouTube channel information like channel, video, comment information using the YouTube Data API
+- Store extracted data in a MySQL database
+- Analyzing the data with the help of SQL queries
+- Visualize data using Pandas DataFrames
+- User-friendly interface powered by Streamlit
+# Approach
+Setup the Streamlit app: Streamlit is a user-friendly web development tool that simplifies the process of creating intuitive interfaces. With Streamlit, you can easily design a straightforward UI where users can input a channel ID and quickly access all relevant details in a simple manner.
+
+Connect to Google API: To fetch all the required data, you'll require the YouTube API. Utilize the Google API client library for Python to send requests to the API and retrieve the necessary information.
+
+Store data in MySql: The collected data is stored in a MySQL database. Employ the MySQL Connector package to establish a connection with the MySQL localhost server. 
+
+SQLAlchemy and PyMySQL: These 2 will facilitate the creation of a temporary connection to the MySQL database, enabling bulk insertion of data.
+
+
+
 
 
