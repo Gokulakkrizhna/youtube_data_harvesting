@@ -9,7 +9,7 @@ The YouTube Data Harvesting and Warehousing project simplifies the extraction of
 - [Retrieving data from the YouTube API](#retrieving-data-from-the-youtube-api)
 - [Migrating data to a SQL data warehouse](#migrating-data-to-a-sql-data-warehouse)
 - [Data Analysis](#data-analysis)
-- [Contributing](#contributing)
+- [Approach](#approach)
 - [Contact](#contact)
 # Key Technologies and Skills
 - Python Scripting
