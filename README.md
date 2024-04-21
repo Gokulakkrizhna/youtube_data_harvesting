@@ -28,6 +28,6 @@ pip install pymysql sqlalchemy
 ```
 # Usage
 To use this project, Please follow the below steps.
-- Install the required packages: ```bash pip install -r requirements.txt ```
+- Install the required packages: ```pip install -r requirements.txt ```
 
 
