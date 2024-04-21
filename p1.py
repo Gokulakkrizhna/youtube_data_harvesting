@@ -250,7 +250,7 @@ def streamlit_home():
 
 api_service_name = "youtube"
 api_version = "v3"
-api_key = "AIzaSyCglcnD-v6tQxWnrTSgHUqowxrFS9y5kKY"
+api_key = "Enter your API key"
 youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=api_key)
 
 mydb = mysql.connector.connect(
