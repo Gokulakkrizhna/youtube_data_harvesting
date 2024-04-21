@@ -61,5 +61,24 @@ import mysql.connector
 from sqlalchemy import create_engine
 import time
 ```
-- 
+- The parameters for initializing the ```YouTube API client``` are set, and a connection to the ```MySQL``` server is established using ```mysql.connector```. Subsequently, a database is created, and three different tables are created within the database.
+```bash
+api_service_name = "youtube"
+api_version = "v3"
+api_key = "Enter your API key"
+youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=api_key)
 
+mydb = mysql.connector.connect(
+ host="localhost",
+ user="root",
+ password="",
+ )
+mycursor = mydb.cursor(buffered=True)
+
+mycursor.execute("create database if not exists youtubedb")
+mycursor.execute("use youtubedb")
+mycursor.execute("create table if not exists channel (channel_id varchar(255) primary key,channel_name varchar(255),channel_description varchar(255),channel_subscriber_Count integer(10),channel_view_count integer(10),channel_total_video integer(10))")
+mycursor.execute("create table if not exists video(c_id varchar(255),id varchar(255) primary key,name varchar(255),description text,publish_date timestamp,view integer(10),likes integer(10),favorite integer(10),comment integer(10),duration integer(10),thumbnail varchar(255),foreign key(c_id) references channel(channel_id))")
+mycursor.execute("create table if not exists comment(video_id varchar(255),id varchar(255) unique,text text,author varchar(255),publish_date timestamp,foreign key(video_id) references video(id))")
+
+streamlit_home()```
