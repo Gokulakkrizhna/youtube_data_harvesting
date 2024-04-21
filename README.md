@@ -82,3 +82,38 @@ mycursor.execute("create table if not exists video(c_id varchar(255),id varchar(
 mycursor.execute("create table if not exists comment(video_id varchar(255),id varchar(255) unique,text text,author varchar(255),publish_date timestamp,foreign key(video_id) references video(id))")
 
 streamlit_home()```
+
+- Four separate tabs have been implemented in the Streamlit web application to enhance user interaction and improve data visualization.
+```bash
+tab1, tab2, tab3, tab4= st.tabs(["Home", "Channel info", " Data Collection","Data Analysis"])```
+-In Tab1 of the Streamlit web application, users can input the ```Channel ID```. If users choose to migrate the data to ```MySQL```, all the data will be stored in the MySQL database using ```SQLAlchemy```.
+```bash
+st.header('YOUTUBE DATA HARVESTING AND WAREHOUSING', divider='rainbow')
+        channel_id = st.text_input('CHANNEL ID', '')
+        c,d,e = channel_part_data(channel_id)
+        if st.button("Migrate to Mysql"):
+            sql_db_val_insert(c,1)
+            sql_db_val_insert(d,2)
+            sql_db_val_insert(e,3)
+            st.success('Data migrated to Mysql server!', icon="✅")```
+```bash
+def sql_db_val_insert(a,b):
+    username = 'root'
+    password = ''
+    host = 'localhost'
+    database = 'youtubedb'
+
+    engine = create_engine(f'mysql+pymysql://{username}:{password}@{host}/{database}')
+
+    if b==1:
+        df = pd.DataFrame(a,index = [1])
+        df.to_sql(name='channel', con=engine, if_exists='append', index=False)
+    elif b==2:
+        df = pd.DataFrame(a,index = [i for i in range(1,len(a["id"])+1)])
+        df.to_sql(name='video', con=engine, if_exists='append', index=False)
+    else:
+        df = pd.DataFrame(a,index = [i for i in range(1,len(a["id"])+1)])
+        df.to_sql(name='comment', con=engine, if_exists='append', index=False)
+    
+    engine.dispose()```
+- Four
