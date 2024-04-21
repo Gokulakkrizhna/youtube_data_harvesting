@@ -174,12 +174,18 @@ def streamlit_home():
         if option == "channel":
             df = pd.DataFrame(c,index=[1])
             st.dataframe(df)
+            csv = df.to_csv(index=False)
+            st.download_button(label="Download CSV", data=csv, file_name='channel.csv', mime='text/csv')
         elif option == "video":
             df1 = pd.DataFrame(d,index = [i for i in range(1,len(d["id"])+1)])
             st.dataframe(df1.iloc[:, 1:])
+            csv = df1.to_csv(index=False)
+            st.download_button(label="Download CSV", data=csv, file_name='video.csv', mime='text/csv')
         else:
             df2 = pd.DataFrame(e,index = [i for i in range(1,len(e["id"])+1)])
             st.dataframe(df2.iloc[:, 1:])
+            csv = df2.to_csv(index=False)
+            st.download_button(label="Download CSV", data=csv, file_name='comment.csv', mime='text/csv')
     
     with tab4:
         option1 = st.selectbox('For which queries do you need to display?',("Query1","Query2","Query3","Query4","Query5","Query6","Query7","Query8","Query9","Query10"))
@@ -244,7 +250,7 @@ def streamlit_home():
 
 api_service_name = "youtube"
 api_version = "v3"
-api_key = "enter your api key"
+api_key = "AIzaSyCglcnD-v6tQxWnrTSgHUqowxrFS9y5kKY"
 youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=api_key)
 
 mydb = mysql.connector.connect(
