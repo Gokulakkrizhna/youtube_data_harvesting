@@ -87,7 +87,7 @@ streamlit_home()
 ```bash
 tab1, tab2, tab3, tab4= st.tabs(["Home", "Channel info", " Data Collection","Data Analysis"])
 ```
--In Tab1 of the Streamlit web application, users can input the ```Channel ID```. If users choose to migrate the data to ```MySQL```, all the data will be stored in the MySQL database using ```SQLAlchemy```.
+- In Tab1 of the Streamlit web application, users can input the ```Channel ID```. If users choose to migrate the data to ```MySQL```, all the data will be stored in the MySQL database using ```SQLAlchemy```.
 ```bash
 st.header('YOUTUBE DATA HARVESTING AND WAREHOUSING', divider='rainbow')
         channel_id = st.text_input('CHANNEL ID', '')
