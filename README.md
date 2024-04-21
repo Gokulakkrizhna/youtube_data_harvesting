@@ -25,5 +25,9 @@ pip install google-api-python-client
 pip install mysql-connector-python
 pip install pandas
 pip install pymysql sqlalchemy
+```
+# Usage
+To use this project, Please follow the below steps.
+- Install the required packages: ```bash pip install -r requirements.txt ```
 
 
