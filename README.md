@@ -46,7 +46,20 @@ Store data in MySql: The collected data is stored in a MySQL database. Employ th
 
 SQLAlchemy and PyMySQL: These 2 will facilitate the creation of a temporary connection to the MySQL database, enabling bulk insertion of data.
 
+Data Analysis: Using SQL queries, the retrieved data has been analyzed and visualized in Streamlit through Pandas DataFrame.
 
+The provided code consists of Python scripting utilizing various libraries and an API key to fetch data and store it in a MySQL database. Additionally, it incorporates a Streamlit web application to facilitate user interaction.
 
-
+Here's a breakdown of what the code does:
+- Importing all the neccessary libraries includes ```Streamlit``` which creates UI to interact with user and display the analysed data, ```google-api-python-client``` which helps python to connect with Youtube with the help of API key and fetch the all the details, ```Pandas``` which helps to display the analysed data in Streamlit web,```mysql-connector-python``` will create a connection between python and MySql server,
+```pymysql sqlalchemy``` will create a temporary connection with MySql database for a bulk insertion,```time``` used to create toast notification in a UI in Streamlit.
+```bash
+import streamlit as st
+import googleapiclient.discovery
+import pandas as pd
+import mysql.connector
+from sqlalchemy import create_engine
+import time
+```
+- 
 
