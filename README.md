@@ -35,15 +35,15 @@ To use this project, Please follow the below steps.
 - Visualize data using Pandas DataFrames
 - User-friendly interface powered by Streamlit
 # Approach
-Setup the Streamlit app: Streamlit is a user-friendly web development tool that simplifies the process of creating intuitive interfaces. With Streamlit, you can easily design a straightforward UI where users can input a channel ID and quickly access all relevant details in a simple manner.
+```Setup the Streamlit app```: Streamlit is a user-friendly web development tool that simplifies the process of creating intuitive interfaces. With Streamlit, you can easily design a straightforward UI where users can input a channel ID and quickly access all relevant details in a simple manner.
 
-Connect to Google API: To fetch all the required data, you'll require the YouTube API. Utilize the Google API client library for Python to send requests to the API and retrieve the necessary information.
+```Connect to Google API```: To fetch all the required data, you'll require the YouTube API. Utilize the Google API client library for Python to send requests to the API and retrieve the necessary information.
 
-Store data in MySql: The collected data is stored in a MySQL database. Employ the MySQL Connector package to establish a connection with the MySQL localhost server. 
+```Store data in MySql```: The collected data is stored in a MySQL database. Employ the MySQL Connector package to establish a connection with the MySQL localhost server. 
 
-SQLAlchemy and PyMySQL: These 2 will facilitate the creation of a temporary connection to the MySQL database, enabling bulk insertion of data.
+```SQLAlchemy and PyMySQL```: These 2 will facilitate the creation of a temporary connection to the MySQL database, enabling bulk insertion of data.
 
-Data Analysis: Using SQL queries, the retrieved data has been analyzed and visualized in Streamlit through Pandas DataFrame.
+```Data Analysis```: Using SQL queries, the retrieved data has been analyzed and visualized in Streamlit through Pandas DataFrame.
 
 The provided code consists of Python scripting utilizing various libraries and an API key to fetch data and store it in a MySQL database. Additionally, it incorporates a Streamlit web application to facilitate user interaction.
 
@@ -191,7 +191,7 @@ def sql_db_val_insert(a,b):
     
     engine.dispose()
 ```
-- In Tab2 of the Streamlit web application, data related to channels will be fetched and demonstrated, mimicking the interface of YouTube. Here ```channel_general_data``` will fetch all basic details of the channels and ```channel_video_url``` will fetch the latest videoid of that channel.
+- In Tab2 of the Streamlit web application, data related to channels will be fetched and demonstrated, mimicking the interface of YouTube. Here ```channel_general_data``` will fetch all basic details of the channels and ```channel_video_url``` will fetch the latest video url from the respective channel.
  ```bash
 a = channel_general_data(channel_id)
         col1, col2 = st.columns(2)
