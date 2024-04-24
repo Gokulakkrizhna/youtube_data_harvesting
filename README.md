@@ -25,6 +25,7 @@ pip install pymysql sqlalchemy
 ```
 # Usage
 To use this project, Please follow the below steps.
+- To clone this repository: ```git clone https://github.com/Gokulakkrizhna/youtube_data_harvesting.git```
 - Install the required packages: ```pip install -r requirements.txt ```
 - Run the Streamlit app: ```streamlit run p1.py```
 - Access the app in your browser at ```http://localhost:8501```
